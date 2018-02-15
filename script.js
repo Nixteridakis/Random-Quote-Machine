@@ -1,3 +1,8 @@
+$(document).ready(function() {
+    myMachine();
+});
+
+
 function myMachine() {
   var newData = new XMLHttpRequest();
   newData.open("GET", "https://talaikis.com/api/quotes/random/");
@@ -17,12 +22,18 @@ function myMachine() {
     $(".changeMe2").css("color", hue);
     $(".quote").css("color", hue);
     $("#btn").css("background-color", hue);
-
-
-
-
   };
   newData.send();
+}
+
+function twitterPost(){
+  window.open(
+    "https://twitter.com/intent/tweet?text=" +
+      '"' +
+      print1[0] +
+      '"     -' +
+      print1[1]
+  );
 }
 
 function renderHTML(obj) {
@@ -31,18 +42,3 @@ function renderHTML(obj) {
   $(".changeMe2").html("- " + print1[1]);
 }
 
-myMachine();
-
-$("#btn").on("click", function() {
-  myMachine();
-});
-
-$("#twitter").on("click", function() {
-  window.open(
-    "https://twitter.com/intent/tweet?text=" +
-      '"' +
-      print1[0] +
-      '"     -' +
-      print1[1]
-  );
-});
