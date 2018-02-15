@@ -53,10 +53,18 @@ button {
   float: right;
 }
 
+button:hover{
+  cursor: pointer; 
+}
+
 .quote {
   margin-right: 10px;
 }
 
 .links {
   color: rgb(119, 177, 169);
+}
+
+.links:hover{
+  cursor: pointer;
 }
