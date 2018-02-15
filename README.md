@@ -5,3 +5,5 @@ You can view the project here: https://nixteridakis.github.io/Random-Quote-Machi
 Info
 ======
 A program that generates random quotes using a free quote library API.
+
+***Currently not getting requests through github but works on the desktop.
