@@ -1,6 +1,6 @@
 function myMachine() {
   var newData = new XMLHttpRequest();
-  newData.open("GET", "https://talaikis.com/api/quotes/random/");
+  newData.open("GET", "http://quotes.stormconsultancy.co.uk/random.json");
   newData.onload = function() {
     var print = JSON.parse(newData.responseText);
     renderHTML(print);
@@ -17,18 +17,14 @@ function myMachine() {
     $(".changeMe2").css("color", hue);
     $(".quote").css("color", hue);
     $("#btn").css("background-color", hue);
-
-
-
-
   };
   newData.send();
 }
 
 function renderHTML(obj) {
   print1 = Object.values(obj);
-  $(".changeMe1").html(print1[0]);
-  $(".changeMe2").html("- " + print1[1]);
+  $(".changeMe1").html(print1[2]);
+  $(".changeMe2").html("- " + print1[0]);
 }
 
 myMachine();
