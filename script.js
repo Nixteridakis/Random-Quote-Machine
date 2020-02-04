@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function myMachine() {
   var newData = new XMLHttpRequest();
-  newData.open("GET", "http://quotes.stormconsultancy.co.uk/random.json");
+  newData.open("GET", "https://quotes.stormconsultancy.co.uk/random.json");
   newData.onload = function() {
     var print = JSON.parse(newData.responseText);
     renderHTML(print);
