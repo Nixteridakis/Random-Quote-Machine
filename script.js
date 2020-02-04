@@ -45,11 +45,10 @@ $("#twitter").on("click", function() {
       '"     -' +
       print1[1]
   );
-}
+})
 
 function renderHTML(obj) {
   print1 = Object.values(obj);
-  $(".changeMe1").html(print1[0]);
-  $(".changeMe2").html("- " + print1[1]);
+  $(".changeMe1").html(print1[2]);
+  $(".changeMe2").html("- " + print1[0]);
 }
-
