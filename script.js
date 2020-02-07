@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 function myMachine() {
   var newData = new XMLHttpRequest();
-  newData.open("GET", "http://quotes.stormconsultancy.co.uk/random.json");
+  newData.open("GET", "https://api.quotable.io/random");
   newData.onload = function() {
     var print = JSON.parse(newData.responseText);
     renderHTML(print);
@@ -17,8 +17,8 @@ function myMachine() {
       Math.floor(Math.random() * 256) +
       ")";
     $("body").css("background-color", hue);
-    $(".changeMe1").css("color", hue);
-    $(".changeMe2").css("color", hue);
+    $("#quote").css("color", hue);
+    $("#author").css("color", hue);
     $(".quote").css("color", hue);
     $("#btn").css("background-color", hue);
   };
@@ -26,12 +26,11 @@ function myMachine() {
 }
 
 function renderHTML(obj) {
-  print1 = Object.values(obj);
-  $(".changeMe1").html(print1[2]);
-  $(".changeMe2").html("- " + print1[0]);
+  data = Object.values(obj);
+  console.log(data)
+  $("#quote").html(data[1]);
+  $("#author").html("- " + data[2]);
 }
-
-myMachine();
 
 $("#btn").on("click", function() {
   myMachine();
@@ -41,14 +40,8 @@ $("#twitter").on("click", function() {
   window.open(
     "https://twitter.com/intent/tweet?text=" +
       '"' +
-      print1[0] +
-      '"     -' +
-      print1[1]
+      data[1] +
+      '" - ' +
+      data[2]
   );
 })
-
-function renderHTML(obj) {
-  print1 = Object.values(obj);
-  $(".changeMe1").html(print1[2]);
-  $(".changeMe2").html("- " + print1[0]);
-}
